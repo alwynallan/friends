@@ -6,4 +6,4 @@ Here we use a simulation written in C to show the same thing.
 
 ![Simulation Results](simulation_results.png)
 
-The simulation code [friends.c](friends.c) is provided with instructions in the comments. It compiles and runs on Linux, and probably others. It outputs CSV which can be imported by Excel. It optionally outputs a .dof file that can be processed with GraphViz.org utilities, but only for small populations.
+The simulation code [friends.c](friends.c) is provided with instructions in the comments. It compiles and runs on Linux, and probably others. It outputs CSV which can be imported by Excel. It optionally outputs a .dof file that can be processed with Graphviz.org utilities, but only for small populations.
