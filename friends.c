@@ -57,12 +57,17 @@ int main() {
       if(average_friends_of_friends > (double)friend_count[p]) average_friends_of_friends_more++;
     }
   }
-  printf("\"Friends (u=%.2Lf sd=%.2Lf)\"\n", fh->dsum / (long double)fh->dcount, sqrtl(fh->d2sum / (long double)fh->dcount - powl(fh->dsum / (long double)fh->dcount,2.)));
+  printf("\"Friends (u=%.2Lf sd=%.2Lf)\"\n",
+         fh->dsum / (long double)fh->dcount,
+         sqrtl(fh->d2sum / (long double)fh->dcount - powl(fh->dsum / (long double)fh->dcount,2.)));
   histogram_dump(fh, 1);
-  printf("\"Friends (average) of friends (u=%.2Lf sd=%.2Lf)\"\n", ffh->dsum / (long double)ffh->dcount, sqrtl(ffh->d2sum / (long double)ffh->dcount - powl(ffh->dsum / (long double)ffh->dcount,2.)));
+  printf("\"Friends (average) of friends (u=%.2Lf sd=%.2Lf)\"\n",
+         ffh->dsum / (long double)ffh->dcount,
+         sqrtl(ffh->d2sum / (long double)ffh->dcount - powl(ffh->dsum / (long double)ffh->dcount,2.)));
   histogram_dump(ffh, 1);
-  printf("\"%d people's friends have more friends (on average) than them out of %d people with friends.\"\n", average_friends_of_friends_more, people_with_friends);
-  
+  printf("\"%d people's friends have more friends (on average) than them out of %d people with friends.\"\n",
+         average_friends_of_friends_more, people_with_friends);
+
   #ifdef WRITE_DOT_FILE
   FILE * fp = fopen("friends.dot", "w");
   assert(fp != NULL);
