@@ -48,9 +48,9 @@ int main() {
   int people_with_friends = 0;
   for(int p=0; p<PEOPLE; p++) {
     histogram_count(fh, friend_count[p]);
-    int total_friends_of_friends = 0;
-    for(int f=0; f<friend_count[p]; f++) total_friends_of_friends += friend_count[friend_list[p][f]];
     if(friend_count[p] > 0) {
+      int total_friends_of_friends = 0;
+      for(int f=0; f<friend_count[p]; f++) total_friends_of_friends += friend_count[friend_list[p][f]];
       people_with_friends++;
       double average_friends_of_friends = (double)total_friends_of_friends / (double)friend_count[p];
       histogram_count(ffh, average_friends_of_friends);
