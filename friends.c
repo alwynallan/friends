@@ -14,6 +14,7 @@
 //#define PEOPLE 50
 //#define FRIENDSHIPS 250
 //#define WRITE_DOT_FILE
+// $ dot -Tpng friends.dot > friends_dot.png
 
 int friend_count[PEOPLE];
 int friend_list[PEOPLE][MAX_FRIENDS];
@@ -74,7 +75,7 @@ int main() {
   fprintf(fp, "strict graph {\n");
   for(int a=0; a<PEOPLE; a++)
     for(int i=0; i<friend_count[a]; i++) {
-      b = friend_list[a][i];
+      int b = friend_list[a][i];
       if(a<b) fprintf(fp, "  %d -- %d\n", a, b);
     }
   fprintf(fp, "}\n");
