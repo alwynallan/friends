@@ -6,6 +6,6 @@ Here we use a simulation written in C to show the same thing.
 
 ![Simulation Results](simulation_results.png)
 
-It's no coincidence that the mean of the "Friends (average) of friends" data is exactly 11. The general rule, also mentioned by Feld, is that the mean for that group will be the mean of the "Friends" group plus its variance divided by the mean. The variance in this case (square of the standard deviation) appears to be the same of the mean, 10.
+It's no coincidence that the mean of the "Friends (average) of friends" data is exactly 11. The general rule, also mentioned by Feld, is that the mean for that group will be the mean of the "Friends" group plus its variance divided by the mean. The variance in this case (square of the standard deviation) appears to be the same as the mean, 10.
 
 The simulation code [friends.c](friends.c) is provided with instructions in the comments. It compiles and runs on Linux, and probably others. It outputs CSV which can be imported by Excel. It optionally outputs a .dof file that can be processed with Graphviz.org utilities, but only for small populations.
