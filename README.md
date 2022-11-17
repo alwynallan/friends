@@ -10,6 +10,6 @@ It's no coincidence that the mean of the "Friends (average) of friends" data is 
 
 The simulation code [friends.c](friends.c) is provided with instructions in the comments. It compiles and runs on Linux, and probably others. It outputs CSV which can be imported by Excel. It optionally outputs a .dof file that can be processed with Graphviz.org utilities, but only for small populations.
 
-Here is the network map of a group of just 50 friends, with friendships assigned at random.
+Here is the network map of a group of just 50 people, with 250 friendships assigned at random.
 
 ![Friendship network](friends_dot.png)
