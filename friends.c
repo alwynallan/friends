@@ -2,6 +2,7 @@
 
 // $ gcc -Wall -O3 -c grand.c
 // $ gcc -Wall -O3 friends.c grand.o -lm -o friends
+// $ ./friends
 
 #include <stdio.h>
 #include <stdbool.h>
