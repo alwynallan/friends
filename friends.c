@@ -5,7 +5,6 @@
 // $ ./friends
 
 #include <stdio.h>
-#include <stdbool.h>
 #include <assert.h>
 #include "grand.h"
 
@@ -27,16 +26,16 @@ void add_friend(int a, int b) {
   friend_list[b][friend_count[b]++] = a;
 }
 
-bool is_friend(int a, int b) {
+int is_friend(int a, int b) {
   if(friend_count[a] <= friend_count[b]) { // scan the shorter list
     for(int i=0; i < friend_count[a]; i++)
-      if(friend_list[a][i] == b) return true;
+      if(friend_list[a][i] == b) return 1;
   }
   else {
     for(int i=0; i < friend_count[b]; i++)
-      if(friend_list[b][i] == a) return true;
+      if(friend_list[b][i] == a) return 1;
   }
-  return false;
+  return 0;
 }
 
 int main() {
