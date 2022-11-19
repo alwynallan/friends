@@ -18,16 +18,24 @@
 // $ dot -Tpng friends.dot > friends_dot.png
 
 int friend_count[PEOPLE];
-int friend_list[PEOPLE][MAX_FRIENDS];
+int friend_list[PEOPLE][MAX_FRIENDS]; // adjacency lists
 
 void add_friend(int a, int b) {
   assert(friend_count[a] < MAX_FRIENDS);
   friend_list[a][friend_count[a]++] = b;
+  assert(friend_count[b] < MAX_FRIENDS);
+  friend_list[b][friend_count[b]++] = a;
 }
 
 bool is_friend(int a, int b) {
-  for(int i=0; i < friend_count[a]; i++)
-    if(friend_list[a][i] == b) return true;
+  if(friend_count[a] <= friend_count[b]) { // scan the shorter list
+    for(int i=0; i < friend_count[a]; i++)
+      if(friend_list[a][i] == b) return true;
+  }
+  else {
+    for(int i=0; i < friend_count[b]; i++)
+      if(friend_list[b][i] == a) return true;
+  }
   return false;
 }
 
@@ -41,7 +49,6 @@ int main() {
       b = grand_0_m(PEOPLE-1);
     } while(a == b || is_friend(a,b));
     add_friend(a, b);
-    add_friend(b, a);
   }
   
   histogram *fh = histogram_init(-.5, 20.5, 1.);
