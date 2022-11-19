@@ -13,3 +13,5 @@ The simulation code [friends.c](friends.c) is provided with instructions in the 
 Here is the network map of a group of just 50 people, with 250 friendships assigned at random.
 
 ![Friendship network](friends_dot.png)
+
+It's very different than the network maps shown by Feld for high school girls. This case may be more representitive of online social networks.
